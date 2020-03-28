@@ -1,0 +1,220 @@
+html{
+  font-size: 100%;
+}
+
+.home{
+  width: 100vw;
+  height: 100vh;
+
+}
+.upper{
+  width: 100vw;
+  height: 8vh;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upper__boxlink--link{
+  color:white;
+  margin: 0 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.upper__boxlink--link:hover{
+  color: lightgray;
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+}
+.grayarea{
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: grey;
+}
+
+.grayarea_div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.grayarea__disabled{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.grayarea_div > .grayarea__textfield{
+  width: 280px;
+  height: 56px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+  font-size: 16px;
+
+}
+.grayarea__textfield{
+  width: 280px;
+  height: 56px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 5px 5px 0 0;
+  background-color: lightgray;
+  font-size: 16px;
+  font-family: 'Eczar', serif;
+}
+.grayarea__textfield--click{
+  position: absolute;
+  left:12px;
+  top:30%;
+
+}
+.grayarea__textfield:focus{
+  transition: all ease 0.5s;
+  border-bottom: 2px solid black;
+  outline:none;
+}
+.grayarea__textfield:valid + .grayarea__textfield--click, .grayarea__textfield:focus + .grayarea__textfield--click{
+  transition: all ease 0.5s;
+  top:0;
+  font-size: 12px;
+}
+.grayarea__switch{
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.grayarea__checkbox{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 0;
+  height: 0;
+}
+.grayarea__slider{
+  background-color: white;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all ease 0.5s;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.grayarea__slider::before{
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -5px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all ease 0.5s;
+}
+.grayarea__checkbox:checked + .grayarea__slider{
+  background-color: rgb(165, 74, 112);
+}
+.grayarea__checkbox:checked + .grayarea__slider::before{
+  background-color: purple;
+  left:21px;
+}
+
+.container{
+  display: block;
+  position: relative;
+}
+.container .checkbox{
+  position: absolute;
+  height: 0;
+  width: 0;
+  display: block;
+
+}
+.checkmark{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 24px;
+  width: 24px;
+  border: 3px solid rgb(177, 174, 174);
+  background-color: lightgray;
+  box-sizing: border-box;
+}
+.checkmark::before{
+ position: absolute;
+ content: "";
+ left: 5px;
+ top: 1px;
+ width: 5px;
+ height: 11px;
+ border: solid white;
+ border-width: 0 3px 3px 0;
+ transform: rotate(45deg);
+ display:none;
+}
+.checkbox:checked + .checkmark{
+  background-color: purple;
+}
+.checkbox:checked + .checkmark::before{
+  display:block;
+}
+
+.contain__radiobutton{
+  position: relative;
+  display: block;
+
+}
+.radio{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 0;
+  height: 0;
+}
+.redesigned__radio{
+  position: absolute;
+  left:0;
+  top:0;
+  height: 20px;
+  width: 20px;
+  background-color: lightgray;
+  border-radius: 50%;
+  border: 2px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.redesigned__radio::after{
+  content: "";
+  height: 13px;
+  width: 13px;
+  background-color: purple;
+  border-radius: 50%;
+  display: none;
+}
+.radio:checked + .redesigned__radio::after{
+  display: block;
+}
+.radio:checked + .redesigned__radio{
+  border-color: purple
+}
