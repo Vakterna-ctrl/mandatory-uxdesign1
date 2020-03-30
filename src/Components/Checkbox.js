@@ -6,11 +6,17 @@ const Checkbox = () => {
     <>
     <label className="container">
     <input className="checkbox "type="checkbox"/>
-    <div className="checkmark"></div>
+    <div className="checkmark checkmark--click"></div>
     </label>
+
     <label className="container">
-    <input className="checkbox" checked type="checkbox"/>
-    <div className="checkmark"></div>
+    <input className="checkbox" disabled type="checkbox"/>
+    <div className="checkmark checkmark--disable"></div>
+    </label>
+
+    <label className="container">
+    <input className="checkbox" disabled checked type="checkbox"/>
+    <div className="checkmark checkmark--disable"></div>
     </label>
     </>
   )

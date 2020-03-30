@@ -52,6 +52,7 @@ section{
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  opacity: 38%;
 }
 .grayarea_div > .grayarea__textfield{
   width: 280px;
@@ -62,6 +63,8 @@ section{
   border-radius: 5px 5px 0 0;
   background-color: white;
   font-size: 16px;
+  cursor: pointer;
+  box-sizing: content-box;
 
 }
 .grayarea__textfield{
@@ -74,6 +77,8 @@ section{
   background-color: lightgray;
   font-size: 16px;
   font-family: 'Eczar', serif;
+  box-sizing: content-box;
+
 }
 .grayarea__textfield--click{
   position: absolute;
@@ -91,22 +96,31 @@ section{
   top:0;
   font-size: 12px;
 }
-.grayarea__switch{
+.grayarea__switch--active{
   position: relative;
   display: inline-block;
-  width: 36px;
-  height: 16px;
   border-radius: 10px;
   display: flex;
   align-items: center;
 }
+
+.grayarea__switch--disable{
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  opacity: 38%;
+}
 .grayarea__checkbox{
   position: absolute;
-  left: 0;
+  left: -100px;
   top:0;
   width: 0;
   height: 0;
 }
+
+
 .grayarea__slider{
   background-color: white;
   position: absolute;
@@ -114,11 +128,16 @@ section{
   left: 0;
   right: 0;
   bottom: 0;
+  width: 36px;
+  height: 16px;
   transition: all ease 0.5s;
   background-color: lightgray;
   display: flex;
   align-items: center;
   border-radius: 10px;
+}
+.grayarea__slider--focus{
+  cursor: pointer;
 }
 .grayarea__slider::before{
   position: absolute;
@@ -130,6 +149,13 @@ section{
   background-color: white;
   transition: all ease 0.5s;
 }
+.grayarea__checkbox--click:focus + .grayarea__slider::before{
+  -webkit-box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+-moz-box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+outline:none;
+}
+
 .grayarea__checkbox:checked + .grayarea__slider{
   background-color: rgb(165, 74, 112);
 }
@@ -137,6 +163,7 @@ section{
   background-color: purple;
   left:21px;
 }
+
 
 .container{
   display: block;
@@ -177,11 +204,22 @@ section{
 .checkbox:checked + .checkmark::before{
   display:block;
 }
+.checkmark--disable{
+  opacity: 38%
+}
+.checkbox:focus + .checkmark{
+  -webkit-box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+-moz-box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+outline:none;
+}
 
 .contain__radiobutton{
   position: relative;
   display: block;
-
+}
+.contain__radiobutton--disabled{
+  opacity: 38%;
 }
 .radio{
   position: absolute;
@@ -217,4 +255,10 @@ section{
 }
 .radio:checked + .redesigned__radio{
   border-color: purple
+}
+.radio:focus + .redesigned__radio{
+  -webkit-box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+-moz-box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+box-shadow: 0px 0px 0px 4px rgba(110,109,110,1);
+outline:none;
 }
